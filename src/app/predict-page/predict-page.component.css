@@ -1,0 +1,30 @@
+.container{
+    text-align: center;
+}
+img{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+.element {
+  text-align: center;
+  font-family: Monospace;
+  font-size: large;
+  animation: pulse 3s infinite;
+}
+
+@keyframes pulse {
+  0% {
+      background-color: #F4EEFF;
+  }
+  50% {
+      background-color:#DCD6F7;
+  }
+  75%{
+      background-color: #A6B1E1;
+  }
+  100% {
+      background-color: #DCD6F7;
+  }
+}

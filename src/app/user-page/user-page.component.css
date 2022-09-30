@@ -1,0 +1,48 @@
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    /* background: #f7f7f7; */
+}
+.card{
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    min-width: 254px;
+}
+::ng-deep .mat-progress-spinner circle, .mat-spinner circle {
+    stroke: #ffffff !important;
+}
+.lbutton:hover {
+    background-color: rgb(174, 183, 188);
+  
+}
+#box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* background-color:#F0D9FF; */
+}
+.element {
+    animation: pulse 3s infinite;
+}
+  
+@keyframes pulse {
+    0% {
+        background-color: #F4EEFF;
+    }
+    50% {
+        background-color:#DCD6F7;
+    }
+    75%{
+        background-color: #A6B1E1;
+    }
+    100% {
+        background-color: #DCD6F7;
+    }
+}
+.lh{
+    background-color:#424874;
+}

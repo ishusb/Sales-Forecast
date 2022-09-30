@@ -1,0 +1,42 @@
+<div  class="container"  fxLayoutAlign="center center" fxFlexFill id="box" class="element">
+  <div fxLayoutAlign="center center" fxFlexFill>
+    <mat-card fxFlex="25" class="card">
+      <mat-toolbar color="primary" class="lh">Upload Dataset</mat-toolbar><br>
+      <mat-form-field floatPlaceholder="never">
+        <input [hidden]="true" (change)="onFileSelect($event)" type="file" accept=".csv" #fileSelect>
+        <input readonly matInput [(ngModel)]="filename" placeholder="Select file..."/>
+        <button *ngIf="this.file" (click)="deleteFile(); fileSelect.value='';" matSuffix matTooltip="Remove selected file"
+                [matTooltipPosition]="'above'" type="button" color="warn" mat-icon-button>
+                <mat-icon>close</mat-icon>
+              </button>
+        <button matSuffix mat-icon-button (click)="fileSelect.click();"  matTooltip="Select a file" [matTooltipPosition]="'above'">
+          <mat-icon>file_upload</mat-icon>
+        </button> 
+      </mat-form-field>
+      <!-- <mat-form-field>
+        <mat-label>Target Variable</mat-label>
+        <mat-select [formControl]="target" required >
+          <mat-option *ngFor="let target of targets" [value]="target.value">
+            {{target.viewValue}}
+          </mat-option>
+        </mat-select>
+        <mat-error *ngIf="target.hasError('required')">Please choose a target variable</mat-error>
+      </mat-form-field> -->
+
+      <mat-form-field>
+        <mat-label>Period Variable</mat-label>
+        <mat-select [formControl]="period" required [(ngModel)]="value" (selectionChange)="updateCategory()" name="time" type="value">
+          <mat-option *ngFor="let period of periods" [value]="period.value">
+            {{period.viewValue}}
+          </mat-option>
+        </mat-select>
+        <mat-error *ngIf="period.hasError('required')">Please choose a target variable</mat-error>
+      </mat-form-field>
+
+      <button  (click)="fileUpload()" [disabled]="!uploaded" mat-raised-button type="submit" class="lbutton">
+        <span *ngIf="!showLoader">Send</span>
+        <mat-progress-bar mode="indeterminate"  *ngIf="showLoader"></mat-progress-bar>
+      </button>
+    </mat-card>
+  </div>
+</div>

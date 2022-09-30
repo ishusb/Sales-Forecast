@@ -1,0 +1,30 @@
+<div class="box" fxLayoutAlign="center center" fxFlexFill>
+<div fxLayoutAlign="center center" fxFlexFill>
+  <mat-card fxFlex="25">
+      <mat-toolbar color="primary" class="lh">Login Here</mat-toolbar><br>
+      <form  fxLayoutAlign="stretch" fxLayout="column" [formGroup]="loginForm" (ngSubmit)="onSubmit()" novalidate class="d-flex-center">
+          <mat-form-field >
+            <input type="email" matInput placeholder="Email-id" formControlName="email"><br>
+            <mat-error *ngIf="!loginForm.get('email')?.errors?.required && (loginForm.get('email')?.errors?.pattern)">
+              Please enter a valid email address
+            </mat-error>
+            <mat-error *ngIf="loginForm.get('email')?.invalid && (loginForm.get('email')?.dirty || loginForm.get('email')?.touched) && loginForm.get('email')?.errors?.required">
+              Email is required
+            </mat-error>
+          </mat-form-field>
+          <mat-form-field>
+            <input type="password" matInput placeholder="Password" formControlName="password">
+            <mat-error *ngIf="!loginForm.get('password')?.errors?.required">
+              Password length must be 8 or more , must contain uppercase , lowercase , numeric and special characters
+            </mat-error>
+            <mat-error *ngIf="loginForm.get('password')?.invalid && (loginForm.get('password')?.dirty || loginForm.get('password')?.touched) && loginForm.get('password')?.errors?.required">
+              Password is required
+            </mat-error>
+          </mat-form-field>
+          <br>
+          <button [disabled]="!loginForm.valid"  mat-raised-button type="submit" class="lbutton">Login</button>
+        </form>
+  </mat-card>
+</div>
+</div>
+

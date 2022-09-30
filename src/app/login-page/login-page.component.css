@@ -1,0 +1,31 @@
+.lbutton:hover {
+  background-color: rgb(174, 183, 188);
+
+}
+
+.box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: pulse 5s infinite;
+}
+
+
+@keyframes pulse {
+  0% {
+      background-color: #F4EEFF;
+  }
+  50% {
+      background-color:#DCD6F7;
+  }
+  75%{
+      background-color: #A6B1E1;
+  }
+  100% {
+      background-color: #DCD6F7;
+  }
+}
+
+.lh{
+  background-color:#424874;
+}

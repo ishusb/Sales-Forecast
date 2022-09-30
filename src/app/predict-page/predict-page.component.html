@@ -1,0 +1,33 @@
+<div class="element">
+
+<br>
+<h1 style="text-align: center;"><b>Model Metrics</b></h1>
+<br>
+
+<div *ngFor="let i of errors | keyvalue" class="container">
+        <b>{{i.key}}</b>
+        <br><br>{{i.value}}<br><br>
+</div>
+
+<p><b>Since the Theil's U Statistic is less than one, the forecasting model is better than guessing.</b></p>
+
+<h1 style="text-align: center;"><b>Predicted Plot</b></h1>
+
+<img src='./assets/plot.jpg'>
+  
+</div>
+
+
+<!-- <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 demo-table">
+        <ng-container *ngFor="let column of columns" [matColumnDef]="column.columnDef">
+          <th mat-header-cell *matHeaderCellDef>
+            {{column.header}}
+          </th>
+          <td mat-cell *matCellDef="let row">
+            {{column.cell(row)}}
+          </td>
+        </ng-container>
+      
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table> -->
